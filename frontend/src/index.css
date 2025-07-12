@@ -1,0 +1,16 @@
+/* frontend/src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Globalne style */
+body {
+    @apply bg-parchment font-text text-neutral;
+}
+
+@layer utilities {
+    .frame-rpg {
+        border: 8px solid transparent;
+        border-image: url('/assets/frame.png') 32 round;
+    }
+}
