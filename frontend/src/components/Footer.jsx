@@ -4,7 +4,7 @@ import { FaFacebook, FaYoutube } from 'react-icons/fa'
 
 export default function Footer() {
     return (
-        <footer className="bg-neutral text-base-100 py-6 mt-12">
+        <footer className="rpg-footer">
             <div className="container mx-auto text-center space-y-4">
                 <div className="space-x-4 text-2xl">
                     <a href="https://facebook.com/vallact"><FaFacebook /></a>

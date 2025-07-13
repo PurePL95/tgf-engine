@@ -34,6 +34,15 @@ module.exports = {
                 '.rpg-divider': {
                     '@apply h-1 bg-gold rounded': {},
                 },
+                '.rpg-input': {
+                    '@apply w-full px-3 py-2 bg-base-100 border-2 border-brown rounded shadow-inner focus:outline-none focus:ring-2 focus:ring-accent': {},
+                },
+                '.rpg-nav': {
+                    '@apply bg-brown text-base-100 flex justify-between items-center p-4 rounded-b-xl shadow-lg font-title': {},
+                },
+                '.rpg-footer': {
+                    '@apply bg-brown text-base-100 py-6 mt-12 text-center space-y-4 font-text': {},
+                },
             })
             addUtilities({
                 '.frame-rpg': {

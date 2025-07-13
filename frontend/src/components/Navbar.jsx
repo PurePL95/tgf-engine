@@ -9,9 +9,9 @@ export default function Navbar({ onLoginSuccess }) {
     }
 
     return (
-        <header className="bg-primary-600 text-white shadow">
-            <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-                <Link to="/" className="text-2xl font-display">
+        <header className="shadow-md">
+            <nav className="rpg-nav container mx-auto">
+                <Link to="/" className="text-2xl">
                     Vallact 2.0
                 </Link>
                 <div className="space-x-4">
