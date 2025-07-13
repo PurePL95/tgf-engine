@@ -7,7 +7,7 @@ load_dotenv()  # wczytuje zmienne z .env
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://vallheru_user:TwojeHaslo@localhost/vallheru"
+    "postgresql://vallact_user:TwojeHaslo@localhost/vallact"
 )
 
 engine = create_engine(DATABASE_URL, echo=True)

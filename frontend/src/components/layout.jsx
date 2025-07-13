@@ -7,7 +7,7 @@ export default function Layout({ children }) {
             <header className="bg-primary-600 text-white shadow">
                 <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
                     <Link to="/" className="text-2xl font-display">
-                        Vallheru 2.0
+                        Vallact 2.0
                     </Link>
                     <div className="space-x-4">
                         {token ? (
@@ -36,7 +36,7 @@ export default function Layout({ children }) {
                 {children}
             </main>
             <footer className="bg-gray-200 text-center py-4 text-sm">
-                © 2025 Vallheru 2.0. All rights reserved.
+                © 2025 Vallact 2.0. All rights reserved.
             </footer>
         </div>
     )
