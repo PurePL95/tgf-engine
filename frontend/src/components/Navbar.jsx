@@ -1,20 +1,41 @@
-// frontend/src/components/WelcomeSection.jsx
-import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function WelcomeSection() {
+export default function Navbar({ onLoginSuccess }) {
+    const token = localStorage.getItem('token')
+
+    const handleLogout = () => {
+        localStorage.removeItem('token')
+        onLoginSuccess?.()
+    }
+
     return (
-        <section className="container mx-auto rpg-panel my-8">
-            <h2 className="text-3xl font-title mb-2">Witaj</h2>
-            <div className="rpg-divider mb-4" />
-            <p className="font-text mb-4">
-                Vallheru to tekstowa gra RPG osadzona w świecie fantasy, rozgrywana
-                wyłącznie w przeglądarce. Atmosfera klasycznego Vallheru, luźne
-                zasady i wspólnota graczy – to nas wyróżnia.
-            </p>
-            <p className="font-text">
-                Walcz z potworami, gromadź surowce, handluj na rynku, zarządzaj
-                strażnicą i zawieraj sojusze. Ścieżek rozwoju jest bardzo wiele!
-            </p>
-        </section>
+        <header className="bg-primary-600 text-white shadow">
+            <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+                <Link to="/" className="text-2xl font-display">
+                    Vallheru 2.0
+                </Link>
+                <div className="space-x-4">
+                    {token ? (
+                        <>
+                            <Link to="/profile" className="hover:underline">
+                                Profil
+                            </Link>
+                            <button onClick={handleLogout} className="hover:underline">
+                                Wyloguj
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <Link to="/login" className="hover:underline">
+                                Zaloguj
+                            </Link>
+                            <Link to="/register" className="hover:underline">
+                                Zarejestruj
+                            </Link>
+                        </>
+                    )}
+                </div>
+            </nav>
+        </header>
     )
 }
