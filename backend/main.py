@@ -3,12 +3,17 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from db import init_db
+
 # importujemy routery
 from routers.users import router as users_router
 from routers.stats import router as stats_router
 
 # definiujemy aplikację **PRZED** użyciem app.include_router(...)
 app = FastAPI()
+
+# ensure database tables exist
+init_db()
 
 # konfiguracja CORS
 app.add_middleware(
