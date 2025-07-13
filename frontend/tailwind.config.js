@@ -35,13 +35,13 @@ module.exports = {
                     '@apply h-1 bg-gold rounded': {},
                 },
                 '.rpg-input': {
-                    '@apply w-full px-3 py-2 bg-base-100 border-2 border-brown rounded shadow-inner focus:outline-none focus:ring-2 focus:ring-accent': {},
+                    '@apply w-full px-3 py-2 bg-parchment border-2 border-brown rounded shadow-inner focus:outline-none focus:ring-2 focus:ring-gold': {},
                 },
                 '.rpg-nav': {
-                    '@apply bg-brown text-base-100 flex justify-between items-center p-4 rounded-b-xl shadow-lg font-title': {},
+                    '@apply bg-brown text-parchment flex justify-between items-center p-4 rounded-b-xl shadow-lg font-title': {},
                 },
                 '.rpg-footer': {
-                    '@apply bg-brown text-base-100 py-6 mt-12 text-center space-y-4 font-text': {},
+                    '@apply bg-brown text-parchment py-6 mt-12 text-center space-y-4 font-text': {},
                 },
             })
             addUtilities({
