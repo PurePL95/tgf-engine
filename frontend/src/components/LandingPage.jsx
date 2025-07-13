@@ -12,7 +12,7 @@ export default function LandingPage({ onLoginSuccess }) {
 
     useEffect(() => {
         // zakładamy endpoint GET /stats/users_count
-        axios.get('http://127.0.0.1:8001/stats/users_count')
+        axios.get('/stats/users_count')
             .then(res => setCount(res.data.count))
             .catch(() => setCount(1351))
     }, [])
