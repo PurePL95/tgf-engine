@@ -8,5 +8,6 @@ router = APIRouter(prefix="/stats", tags=["stats"])
 
 @router.get("/users_count")
 def users_count(session=Depends(get_session)):
-    count = session.exec(select(User)).count()
+    """Return total number of users."""
+    count = len(session.exec(select(User)).all())
     return {"count": count}
