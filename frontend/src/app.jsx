@@ -20,9 +20,7 @@ export default function App() {
             <Routes>
                 <Route
                     path="/"
-                    element={!token
-                        ? <LandingPage onLoginSuccess={() => setToken(localStorage.getItem('token'))} />
-                        : <Navigate to="/profile" replace />}
+                    element={<LandingPage onLoginSuccess={() => setToken(localStorage.getItem('token'))} />}
                 />
                 <Route path="/register" element={<Register />} />
                 <Route
