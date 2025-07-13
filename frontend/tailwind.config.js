@@ -19,6 +19,15 @@ module.exports = {
                 title: ['"MedievalSharp"', 'cursive'],
                 text:  ['"Uncial Antiqua"', 'serif'],
             },
+            keyframes: {
+                'fade-in': {
+                    '0%':   { opacity: '0', transform: 'translateY(10px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+            },
+            animation: {
+                'fade-in': 'fade-in 1s ease-out both',
+            },
         },
     },
     plugins: [
@@ -26,7 +35,7 @@ module.exports = {
         plugin(({ addComponents, addUtilities }) => {
             addComponents({
                 '.btn-rpg': {
-                    '@apply bg-gold hover:bg-gold-dark text-black py-2 px-4 rounded font-semibold transition duration-200 shadow-md': {},
+                    '@apply bg-gold hover:bg-gold-dark text-black py-2 px-6 rounded-full font-semibold transform transition active:scale-95 shadow-md hover:shadow-lg hover:brightness-110': {},
                 },
                 '.rpg-panel': {
                     '@apply bg-parchment border border-brown p-6 rounded-xl shadow-lg': {},
@@ -48,6 +57,13 @@ module.exports = {
                 '.frame-rpg': {
                     border: '8px solid transparent',
                     'border-image': `url('/assets/frame.png') 32 round`,
+                },
+                '.angle-divider': {
+                    'background-image': `url('/assets/divider-fade-003.png')`,
+                    'background-repeat': 'no-repeat',
+                    'background-size': '100% 100%',
+                    height: '64px',
+                    width: '100%',
                 },
             })
         }),
