@@ -1,4 +1,3 @@
-import React from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
@@ -8,16 +7,10 @@ export default function Footer() {
   return (
     <Box component="footer" className="rpg-footer">
       <Box className="space-x-4 text-2xl">
-        <IconButton color="inherit" component="a" href="https://facebook.com/vallact">
-          <FaFacebook />
-        </IconButton>
-        <IconButton color="inherit" component="a" href="https://youtube.com/vallact">
-          <FaYoutube />
-        </IconButton>
+        <IconButton color="inherit" component="a" href="#"><FaFacebook /></IconButton>
+        <IconButton color="inherit" component="a" href="#"><FaYoutube /></IconButton>
       </Box>
-      <Typography variant="body2">
-        © 2025 Vallact Engine
-      </Typography>
+      <Typography variant="body2">© 2025 TGF Engine</Typography>
     </Box>
   )
 }

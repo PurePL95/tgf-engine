@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
@@ -9,37 +9,28 @@ import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import Button from '@mui/material/Button'
 import MenuIcon from '@mui/icons-material/Menu'
-import LoginForm from './LoginForm'
 
-export default function Navbar({ onLoginSuccess }) {
+export default function Navbar({ onLogout }) {
   const [open, setOpen] = useState(false)
   const token = localStorage.getItem('token')
 
-  const handleLogout = () => {
-    localStorage.removeItem('token')
-    onLoginSuccess?.()
-  }
-
-  const navLinks = [
-    { label: 'Home', to: '/' },
-    { label: 'Register', to: '/register' },
-    ...(token ? [{ label: 'Profile', to: '/profile' }] : [])
-  ]
-
   const drawer = (
     <List sx={{ width: 200 }} onClick={() => setOpen(false)}>
-      {navLinks.map(link => (
-        <ListItem button component={Link} to={link.to} key={link.to}>
-          <ListItemText primary={link.label} />
+      <ListItem button component={Link} to="/">
+        <ListItemText primary="Home" />
+      </ListItem>
+      {!token && (
+        <ListItem button component={Link} to="/register">
+          <ListItemText primary="Register" />
         </ListItem>
-      ))}
+      )}
       {token ? (
-        <ListItem button onClick={handleLogout}>
-          <ListItemText primary="Logout" />
+        <ListItem button component={Link} to="/game">
+          <ListItemText primary="Game" />
         </ListItem>
       ) : (
-        <ListItem>
-          <LoginForm onLogin={onLoginSuccess} />
+        <ListItem button component={Link} to="/login">
+          <ListItemText primary="Login" />
         </ListItem>
       )}
     </List>
@@ -50,26 +41,18 @@ export default function Navbar({ onLoginSuccess }) {
       <AppBar position="static" color="secondary" className="font-title">
         <Toolbar className="justify-between">
           <div className="text-2xl">
-            <Link to="/">Vallact 2.0</Link>
+            <Link to="/">TGF Engine</Link>
           </div>
           <div className="hidden md:flex items-center space-x-4">
-            {navLinks.map(link => (
-              <Button
-                key={link.to}
-                color="inherit"
-                component={Link}
-                to={link.to}
-              >
-                {link.label}
-              </Button>
-            ))}
+            <Button color="inherit" component={Link} to="/">Home</Button>
+            {!token && <Button color="inherit" component={Link} to="/register">Register</Button>}
             {token ? (
-              <Button color="inherit" onClick={handleLogout}>Logout</Button>
+              <Button color="inherit" component={Link} to="/game">Game</Button>
             ) : (
-              <LoginForm onLogin={onLoginSuccess} />
+              <Button color="inherit" component={Link} to="/login">Login</Button>
             )}
           </div>
-          <IconButton className="md:hidden" color="inherit" onClick={() => setOpen(true)}>
+          <IconButton color="inherit" edge="end" className="md:hidden" onClick={() => setOpen(true)}>
             <MenuIcon />
           </IconButton>
         </Toolbar>
