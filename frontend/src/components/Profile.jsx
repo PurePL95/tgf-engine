@@ -32,7 +32,7 @@ export default function Profile({ onLogout }) {
                     onLogout?.()
                     navigate('/login', { replace: true })
                 }}
-                className="btn btn-accent font-title w-full mt-6"
+                className="btn-rpg w-full mt-6"
             >
                 Wyloguj się
             </button>

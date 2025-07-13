@@ -73,7 +73,7 @@ export default function Register() {
                             required
                         />
                     </div>
-                    <button disabled={loading} className="btn btn-accent font-title w-full mt-4">
+                    <button disabled={loading} className="btn-rpg w-full mt-4">
                         {loading ? 'Rejestracja…' : 'Zarejestruj się'}
                     </button>
                 </form>
