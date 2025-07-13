@@ -24,3 +24,15 @@ Install dev dependencies and run pytest:
 pip install httpx<0.25 pytest python-multipart
 pytest
 ```
+
+## Frontend setup
+
+Run `npm install` in the `frontend` directory to install Node dependencies.
+Development and build commands rely on Vite. Because executable permissions on
+the bundled scripts may be stripped, the npm scripts call Vite via Node:
+
+```bash
+cd frontend
+npm run dev      # start dev server
+npm run build    # create production build
+```
