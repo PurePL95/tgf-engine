@@ -23,7 +23,7 @@ export default function LandingPage({ onLoginSuccess }) {
 
             <main>
                 <section className="container mx-auto text-center py-12">
-                    <h1 className="text-5xl font-title mb-2">Vallheru – Tekstowa gra RPG</h1>
+                    <h1 className="text-5xl font-title mb-2">Vallact – Tekstowa gra RPG</h1>
                     <p className="font-text mb-4">
                         Dołącz do <span className="font-semibold">{count}</span> zarejestrowanych graczy!
                     </p>

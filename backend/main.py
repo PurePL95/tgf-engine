@@ -26,4 +26,4 @@ app.include_router(stats_router)
 # root
 @app.get("/")
 def root():
-    return {"message": "Hello Vallheru!"}
+    return {"message": "Hello Vallact!"}
