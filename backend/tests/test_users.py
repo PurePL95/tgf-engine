@@ -39,3 +39,9 @@ def test_users_count():
     response = client.get("/stats/users_count")
     assert response.status_code == 200
     assert response.json() == {"count": 1}
+
+
+def test_online_count():
+    response = client.get("/stats/online_count")
+    assert response.status_code == 200
+    assert response.json() == {"count": 0}

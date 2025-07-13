@@ -15,6 +15,16 @@ export default function Navbar({ onLoginSuccess }) {
                     Vallact 2.0
                 </Link>
                 <div className="space-x-4">
+                    <Link to="/ranking" className="hover:underline">Ranking</Link>
+                    <Link to="/faq" className="hover:underline">FAQ</Link>
+                    <a
+                        href="https://wiki.vallact.pl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                    >
+                        Wiki
+                    </a>
                     {token ? (
                         <>
                             <Link to="/profile" className="hover:underline">
@@ -26,9 +36,9 @@ export default function Navbar({ onLoginSuccess }) {
                         </>
                     ) : (
                         <>
-                            <Link to="/login" className="hover:underline">
+                            <a href="#login" className="hover:underline">
                                 Zaloguj
-                            </Link>
+                            </a>
                             <Link to="/register" className="hover:underline">
                                 Zarejestruj
                             </Link>

@@ -6,15 +6,19 @@ import Navbar from './Navbar'
 import WelcomeSection from './WelcomeSection'
 import FeaturesSection from './FeaturesSection'
 import Footer from './Footer'
+import LoginForm from './LoginForm'
 
 export default function LandingPage({ onLoginSuccess }) {
-    const [count, setCount] = useState(0)
+    const [registered, setRegistered] = useState(0)
+    const [online, setOnline] = useState(0)
 
     useEffect(() => {
-        // zakładamy endpoint GET /stats/users_count
         axios.get('/stats/users_count')
-            .then(res => setCount(res.data.count))
-            .catch(() => setCount(1351))
+            .then(res => setRegistered(res.data.count))
+            .catch(() => setRegistered(0))
+        axios.get('/stats/online_count')
+            .then(res => setOnline(res.data.count))
+            .catch(() => setOnline(0))
     }, [])
 
     return (
@@ -25,7 +29,9 @@ export default function LandingPage({ onLoginSuccess }) {
                 <section className="container mx-auto text-center py-12">
                     <h1 className="text-5xl font-title mb-2">Vallact – Tekstowa gra RPG</h1>
                     <p className="font-text mb-4">
-                        Dołącz do <span className="font-semibold">{count}</span> zarejestrowanych graczy!
+                        Dołącz do <span className="font-semibold">{registered}</span> zarejestrowanych graczy!
+                        {' '}
+                        (<span className="font-semibold">{online}</span> online)
                     </p>
                     <Link
                         to="/register"
@@ -33,6 +39,10 @@ export default function LandingPage({ onLoginSuccess }) {
                     >
                         ZAREJESTRUJ SIĘ
                     </Link>
+                </section>
+
+                <section className="container mx-auto my-8">
+                    <LoginForm onLogin={onLoginSuccess} />
                 </section>
 
                 <WelcomeSection />

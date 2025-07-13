@@ -18,7 +18,7 @@ export default function Register() {
         setLoading(true)
         try {
             await registerUser(data)
-            navigate('/login', { replace: true })
+            navigate('/', { replace: true })
         } catch (err) {
             setError(err.message)
         } finally {
@@ -28,7 +28,7 @@ export default function Register() {
 
     return (
         <div className="min-h-screen flex items-center justify-center">
-            <div className="rpg-panel max-w-md mx-auto">
+            <div className="rpg-panel max-w-md mx-auto my-8">
                 <h2 className="text-3xl font-title text-accent text-center mb-6">
                     Rejestracja
                 </h2>
