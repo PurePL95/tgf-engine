@@ -1,21 +1,23 @@
-// frontend/src/components/Footer.jsx
 import React from 'react'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import IconButton from '@mui/material/IconButton'
 import { FaFacebook, FaYoutube } from 'react-icons/fa'
 
 export default function Footer() {
-    return (
-        <footer className="rpg-footer">
-            <div className="container mx-auto text-center space-y-4">
-                <div className="space-x-4 text-2xl">
-                    <a href="https://facebook.com/vallact"><FaFacebook /></a>
-                    <a href="https://youtube.com/vallact"><FaYoutube /></a>
-                </div>
-                <p className="font-text text-sm">
-                    © 2025 Vallact based on Vallact Engine |
-                    <a href="/rules" className="underline px-1">Regulamin</a> |
-                    <a href="/privacy" className="underline px-1">Polityka prywatności</a>
-                </p>
-            </div>
-        </footer>
-    )
+  return (
+    <Box component="footer" className="rpg-footer">
+      <Box className="space-x-4 text-2xl">
+        <IconButton color="inherit" component="a" href="https://facebook.com/vallact">
+          <FaFacebook />
+        </IconButton>
+        <IconButton color="inherit" component="a" href="https://youtube.com/vallact">
+          <FaYoutube />
+        </IconButton>
+      </Box>
+      <Typography variant="body2">
+        © 2025 Vallact Engine
+      </Typography>
+    </Box>
+  )
 }

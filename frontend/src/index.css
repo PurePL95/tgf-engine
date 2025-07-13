@@ -5,7 +5,7 @@
 
 /* Globalne style */
 body {
-    @apply bg-parchment font-text text-neutral;
+    @apply bg-parchment font-text text-neutral overflow-x-hidden;
 }
 
 @layer utilities {

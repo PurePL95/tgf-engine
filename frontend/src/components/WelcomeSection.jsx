@@ -1,20 +1,22 @@
-// frontend/src/components/WelcomeSection.jsx
 import React from 'react'
+import Container from '@mui/material/Container'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 
 export default function WelcomeSection() {
-    return (
-        <section className="container mx-auto rpg-panel my-8">
-            <h2 className="text-3xl font-title mb-2">Witaj</h2>
-            <div className="rpg-divider mb-4" />
-            <p className="font-text mb-4">
-                Vallact to tekstowa gra RPG osadzona w świecie fantasy, rozgrywana
-                wyłącznie w przeglądarce. Atmosfera klasycznego Vallact, luźne
-                zasady i wspólnota graczy – to nas wyróżnia.
-            </p>
-            <p className="font-text">
-                Walcz z potworami, gromadź surowce, handluj na rynku, zarządzaj
-                strażnicą i zawieraj sojusze. Ścieżek rozwoju jest bardzo wiele!
-            </p>
-        </section>
-    )
+  return (
+    <Container className="my-16">
+      <Box className="rpg-panel" data-testid="welcome-panel">
+        <Typography variant="h2" className="mb-4">Welcome</Typography>
+        <Typography paragraph>
+          Vallact is a browser based RPG game where you explore dungeons,
+          fight fearsome monsters and forge alliances.
+        </Typography>
+        <Typography>
+          Gather resources, trade with others and build your legend in a
+          persistent world inspired by old-school text RPGs.
+        </Typography>
+      </Box>
+    </Container>
+  )
 }
